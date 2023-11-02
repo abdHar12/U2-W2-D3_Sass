@@ -1,0 +1,15 @@
+@mixin animation($duration, $point-start, $point-end, $delay, $name) {
+  animation: $name $duration $delay;
+
+  @keyframes #{$name} {
+    from {
+      transform: translateY($point-start);
+    }
+    80% {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY($point-end);
+    }
+  }
+}

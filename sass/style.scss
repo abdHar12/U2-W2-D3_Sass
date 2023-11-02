@@ -4,11 +4,14 @@
 @import "./partials/buttons";
 @import "./partials/spacing";
 @import "./partials/floating";
+@import "./partials/grid";
+@import "./partials/animations";
 
 body {
   color: $text-color;
   font-size: $dimension-font;
   font-family: $type-of-font;
+  position: relative;
 }
 
 nav {
@@ -37,23 +40,26 @@ header {
   margin-inline: auto;
   align-items: center;
   width: 100%;
-
+  position: relative;
   @include breakpoints-for-padding;
   > img {
     width: 150px;
     @include floating("st-photo", 6px);
+    @include animation(3s, -300px, 0, 0s, image-transition);
   }
   div {
     @include breakpoints-for-padding;
     h1 {
       @include title-big($dimension-font);
     }
+    @include animation(3s, -400px, 0, 0s, title-animation);
     div {
       width: 70%;
       margin-inline: auto;
       display: flex;
       justify-content: center;
       gap: 0.5rem;
+      @include animation(3s, -400px, 0, 0s, p-and-buttons);
       @each $key, $color in $button-color {
         .button-#{$key} {
           @include buttons($color, white);
@@ -61,7 +67,22 @@ header {
       }
     }
   }
-  #grid-four-images {
-    width: 100%;
+}
+#grid-four-images {
+  $padding-grid: 1rem;
+  $gap-grid: 0.5rem;
+  padding: $padding-grid;
+  display: flex;
+  flex-direction: row;
+  gap: $gap-grid;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+
+  div {
+    @include grid(4, $padding-grid, $gap-grid);
+    img {
+      width: 100%;
+      @include floating("grid", 6px);
+    }
   }
 }

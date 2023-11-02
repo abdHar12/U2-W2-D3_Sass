@@ -1,0 +1,3 @@
+@mixin grid($value, $padding-grid, $gap-grid) {
+  width: calc((100% - $padding-grid - $gap-grid) / $value);
+}
