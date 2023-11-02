@@ -275,4 +275,7 @@ header div div .button-tertiary {
 }
 header div div .button-tertiary:hover {
   background-color: aqua;
+}
+header #grid-four-images {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
