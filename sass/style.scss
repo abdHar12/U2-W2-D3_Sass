@@ -1,0 +1,64 @@
+@import "./partials/reset";
+@import "./partials/font";
+@import "./partials/colors";
+@import "./partials/buttons";
+@import "./partials/spacing";
+@import "./partials/floating";
+
+body {
+  color: $text-color;
+  font-size: $dimension-font;
+  font-family: $type-of-font;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: $padding-xs;
+  img {
+    width: 40px;
+    display: inline;
+  }
+  ul {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    li {
+      display: inline;
+    }
+  }
+}
+
+header {
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin-inline: auto;
+  align-items: center;
+  width: 100%;
+
+  @include breakpoints-for-padding;
+  > img {
+    width: 150px;
+    @include floating("st-photo", 6px);
+  }
+  div {
+    @include breakpoints-for-padding;
+    h1 {
+      @include title-big($dimension-font);
+    }
+    div {
+      width: 70%;
+      margin-inline: auto;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      @each $key, $color in $button-color {
+        .button-#{$key} {
+          @include buttons($color, white);
+        }
+      }
+    }
+  }
+}

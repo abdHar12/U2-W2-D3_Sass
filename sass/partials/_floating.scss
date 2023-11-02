@@ -1,0 +1,14 @@
+@mixin floating(
+  $which-image,
+  $radius,
+  $box-shadow-value: 0px 5px 80px 0px,
+  $border-value: 3px solid white
+) {
+  border-radius: $radius;
+  box-shadow: $box-shadow-value;
+  border: 0px;
+  @if ($which-image== "st-photo") {
+    border: $border-value;
+    box-shadow: unset;
+  }
+}

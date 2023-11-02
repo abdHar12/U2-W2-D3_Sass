@@ -1,0 +1,6 @@
+$dimension-font: 1rem;
+$type-of-font: Arial, Helvetica, Sans Serif;
+
+@mixin title-big($dim) {
+  font-size: $dim * 3;
+}

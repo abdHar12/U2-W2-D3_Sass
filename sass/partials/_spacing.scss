@@ -1,0 +1,31 @@
+$padding-xs: 0.5rem;
+$padding-sm: 1rem;
+$padding-md: 1.5rem;
+$padding-lg: 2rem;
+$padding-xl: 2.5rem;
+$padding-xxl: 3rem;
+$margin-xs: 0.5rem;
+$margin-sm: 1rem;
+$margin-md: 1.5rem;
+$margin-lg: 2rem;
+$margin-xl: 2.5rem;
+$margin-xxl: 3rem;
+
+@mixin breakpoints-for-padding {
+  padding: $padding-xs;
+  @media screen and (min-width: 576px) {
+    padding: $padding-sm;
+  }
+  @media screen and (min-width: 768px) {
+    padding: $padding-md;
+  }
+  @media screen and (min-width: 992px) {
+    padding: $padding-lg;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: $padding-xl;
+  }
+  @media screen and (min-width: 1400px) {
+    padding: $padding-xxl;
+  }
+}
